@@ -19,7 +19,6 @@ const PiTest = ({ onReady, onError }: Props) => {
     }
 
     try {
-      // Use sandbox only in development
       const sandbox = import.meta.env.MODE === "development";
 
       window.Pi.init({
@@ -27,11 +26,10 @@ const PiTest = ({ onReady, onError }: Props) => {
         sandbox,
       });
 
-      // ✅ REQUIRED for checklist
-      // ❌ No payments scope
-      window.Pi.authenticate([], () => {})
-        .then(() => {
-          console.log("Pi authentication successful");
+      // ✅ REQUIRED FOR STEP 10
+      window.Pi.authenticate(["username"], () => {})
+        .then((auth: any) => {
+          console.log("Pi authenticated:", auth.user.username);
           onReady();
         })
         .catch((err: any) => {
@@ -41,11 +39,11 @@ const PiTest = ({ onReady, onError }: Props) => {
 
     } catch (e) {
       console.error(e);
-      onError("Pi SDK initialization error");
+      onError("Pi SDK error");
     }
   }, []);
 
-  return null; // renders nothing
+  return null;
 };
 
 export default PiTest;
