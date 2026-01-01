@@ -1,0 +1,87 @@
+Privacy Policy
+
+Last updated: 01 January 2026
+
+This Privacy Policy describes how information is collected, used, and protected when you visit this website.
+
+Website:
+https://abhishekpi.netlify.app/
+
+----------------------------------------
+Information We Collect
+----------------------------------------
+
+This website does not directly collect any personal information such as name, email address, phone number, or payment details.
+
+However, the website may use third-party services that collect limited information automatically, such as:
+- IP address
+- Browser type
+- Device information
+- Pages visited
+- Date and time of access
+
+This information is used only for analytics, performance monitoring, and improving user experience.
+
+----------------------------------------
+Cookies
+----------------------------------------
+
+This website may use cookies provided by third-party services (such as analytics or advertising platforms) to:
+- Analyze website traffic
+- Understand user behavior
+- Improve content quality
+
+You can disable cookies in your browser settings at any time.
+
+----------------------------------------
+Third-Party Services
+----------------------------------------
+
+This website may use third-party services such as:
+- Google Analytics
+- Google AdSense
+- Other analytics or advertising tools
+
+These services may collect information according to their own privacy policies. We do not control how third-party services use your data.
+
+----------------------------------------
+Advertisements
+----------------------------------------
+
+Advertisements displayed on this website (if any) may be served by third-party ad networks. These networks may use cookies or web beacons to show relevant ads.
+
+----------------------------------------
+External Links
+----------------------------------------
+
+This website may contain links to external websites. We are not responsible for the privacy practices or content of those websites.
+
+----------------------------------------
+Data Security
+----------------------------------------
+
+We take reasonable steps to protect information, but no method of transmission over the internet is 100% secure. Therefore, we cannot guarantee absolute security.
+
+----------------------------------------
+Children’s Information
+----------------------------------------
+
+This website does not knowingly collect any personal information from children under the age of 13. If you believe that a child has provided personal information, please contact us and it will be removed.
+
+----------------------------------------
+Consent
+----------------------------------------
+
+By using this website, you consent to this Privacy Policy and agree to its terms.
+
+----------------------------------------
+Changes to This Privacy Policy
+----------------------------------------
+
+This Privacy Policy may be updated from time to time. Any changes will be reflected on this page with an updated date.
+
+----------------------------------------
+Contact
+----------------------------------------
+
+If you have any questions about this Privacy Policy, you may contact the website owner through the official contact methods provided on the website.
