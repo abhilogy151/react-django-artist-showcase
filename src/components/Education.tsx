@@ -1,4 +1,5 @@
 import { GraduationCap, Calendar, MapPin, Book } from "lucide-react";
+import { RevealSection, RevealItem } from "@/hooks/useScrollReveal";
 
 const Education = () => {
   const education = [
@@ -27,57 +28,59 @@ const Education = () => {
   return (
     <section id="education" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <RevealSection className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">Education</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
-        </div>
+        </RevealSection>
 
         <div className="max-w-4xl mx-auto space-y-8">
           {education.map((edu, index) => (
-            <div key={index} className="glass-card rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
-              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                <div className="flex items-start gap-4 mb-4 lg:mb-0">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <GraduationCap className="text-primary" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">{edu.degree}</h3>
-                    <h4 className="text-lg text-primary font-semibold">{edu.institution}</h4>
-                    <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-sm mt-1">
-                      <span className="flex items-center gap-1"><MapPin size={14} />{edu.location}</span>
-                      <span className="flex items-center gap-1"><Calendar size={14} />{edu.period}</span>
+            <RevealItem key={index} index={index}>
+              <div className="glass-card card-glow rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 group">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                  <div className="flex items-start gap-4 mb-4 lg:mb-0">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <GraduationCap className="text-primary" size={24} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">{edu.degree}</h3>
+                      <h4 className="text-lg text-primary font-semibold">{edu.institution}</h4>
+                      <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-sm mt-1">
+                        <span className="flex items-center gap-1"><MapPin size={14} />{edu.location}</span>
+                        <span className="flex items-center gap-1"><Calendar size={14} />{edu.period}</span>
+                      </div>
                     </div>
                   </div>
+                  <span className="inline-flex self-start px-3 py-1 rounded-full text-sm font-semibold bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20">
+                    GPA: {edu.gpa}
+                  </span>
                 </div>
-                <span className="inline-flex self-start px-3 py-1 rounded-full text-sm font-semibold bg-primary/10 text-primary">
-                  GPA: {edu.gpa}
-                </span>
-              </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">{edu.description}</p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h5 className="flex items-center font-semibold text-foreground mb-3 gap-2">
-                    <Book size={16} /> Relevant Coursework
-                  </h5>
-                  <div className="flex flex-wrap gap-2">
-                    {edu.relevantCourses.map((c, i) => (
-                      <span key={i} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">{c}</span>
-                    ))}
+                <p className="text-muted-foreground mb-6 leading-relaxed">{edu.description}</p>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h5 className="flex items-center font-semibold text-foreground mb-3 gap-2">
+                      <Book size={16} className="text-primary" /> Relevant Coursework
+                    </h5>
+                    <div className="flex flex-wrap gap-2">
+                      {edu.relevantCourses.map((c, i) => (
+                        <span key={i} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full hover:bg-primary/20 transition-colors cursor-default">{c}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-foreground mb-3">Achievements</h5>
+                    <ul className="space-y-2">
+                      {edu.achievements.map((a, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mt-2 flex-shrink-0" />
+                          <span className="text-muted-foreground text-sm">{a}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-                <div>
-                  <h5 className="font-semibold text-foreground mb-3">Achievements</h5>
-                  <ul className="space-y-2">
-                    {edu.achievements.map((a, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                        <span className="text-muted-foreground text-sm">{a}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
-            </div>
+            </RevealItem>
           ))}
         </div>
       </div>
