@@ -166,11 +166,7 @@
   svg.lucide {
     @apply transition-all duration-300 drop-shadow-sm;
   }
-  a:hover svg.lucide, button:hover svg.lucide, .group:hover svg.lucide {
-    @apply scale-110 drop-shadow-[0_4px_8px_rgba(0,0,0,0.15)];
-    stroke-width: 2.2px;
-  }
-  .text-primary svg.lucide, .group:hover .text-primary svg.lucide {
+  .text-primary svg.lucide {
     filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.4));
   }
   
