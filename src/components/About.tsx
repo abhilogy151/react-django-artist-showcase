@@ -1,10 +1,10 @@
-import { Code2, Database, Shield, TestTube } from "lucide-react";
+import { Code2, Database, Shield, TestTube, BriefcaseBusiness } from "lucide-react";
 import { RevealSection, RevealItem } from "@/hooks/useScrollReveal";
 
 const About = () => {
   const highlights = [
     { icon: Code2, label: "Experience", value: "2+ Years" },
-    { icon: Database, label: "Projects", value: "15+ Done" },
+    { icon: BriefcaseBusiness, label: "Projects", value: "15+ Done" },
   ];
 
   const services = [
