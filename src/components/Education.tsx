@@ -36,14 +36,17 @@ const Education = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           {education.map((edu, index) => (
             <RevealItem key={index} index={index}>
-              <div className="glass-card card-glow rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 group">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+              <div className="glass-card rounded-2xl p-8 border border-white/5 dark:border-white/10 transition-colors duration-500 ease-out relative overflow-hidden hover:bg-card/60">
+                {/* Static enhanced left-accent border */}
+                <div className="absolute inset-y-0 left-0 w-[4px] bg-gradient-to-b from-primary via-accent to-primary shadow-[2px_0_8px_rgba(var(--primary),0.15)]" />
+
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6 relative z-10">
                   <div className="flex items-start gap-4 mb-4 lg:mb-0">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center flex-shrink-0">
                       <GraduationCap className="text-primary" size={24} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">{edu.degree}</h3>
+                      <h3 className="text-xl font-bold text-foreground transition-colors">{edu.degree}</h3>
                       <h4 className="text-lg text-primary font-semibold">{edu.institution}</h4>
                       <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-sm mt-1">
                         <span className="flex items-center gap-1"><MapPin size={14} />{edu.location}</span>
@@ -63,7 +66,7 @@ const Education = () => {
                     </h5>
                     <div className="flex flex-wrap gap-2">
                       {edu.relevantCourses.map((c, i) => (
-                        <span key={i} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full hover:bg-primary/20 transition-colors cursor-default">{c}</span>
+                        <span key={i} className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full cursor-default border border-transparent">{c}</span>
                       ))}
                     </div>
                   </div>
