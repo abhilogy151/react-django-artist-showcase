@@ -14,7 +14,6 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
     { href: "#experience", label: "Experience" },
@@ -25,54 +24,67 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass-card shadow-lg" : "bg-transparent"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)]" : "bg-transparent"}`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <a href="#home" className="text-2xl font-bold gradient-text font-['Space_Grotesk']">
-            Portfolio
+          
+          {/* Logo */}
+          <a href="#home" className="text-2xl font-extrabold tracking-tight text-foreground transition-colors hover:text-primary">
+            ASHWA<span className="text-primary font-medium">.dev</span>
           </a>
 
-          <div className="hidden lg:flex items-center space-x-6">
-            {navItems.map((item) => (
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-7">
+             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium relative group"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-[14px] font-semibold relative group py-1"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-full" />
+                {/* Precise bottom-line slider rebuilt to exact constraints */}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
+            
+            {/* Elegant Divider */}
+            <div className="w-[1px] h-5 bg-border/80 mx-2"></div>
+
             <button
               onClick={toggleTheme}
-              className="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-muted-foreground hover:text-primary transition-all duration-300"
+              className="w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-all duration-300"
               aria-label="Toggle theme"
             >
               {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
             </button>
           </div>
 
+          {/* Mobile Controls */}
           <div className="flex items-center gap-3 lg:hidden">
             <button
               onClick={toggleTheme}
-              className="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-muted-foreground"
+              className="w-9 h-9 rounded-lg flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-all duration-300"
               aria-label="Toggle theme"
             >
               {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
             </button>
-            <button onClick={() => setIsOpen(!isOpen)} className="text-foreground">
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="w-9 h-9 rounded-lg flex items-center justify-center text-foreground hover:bg-secondary transition-all duration-300"
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
+        {/* Mobile Menu Dropdown */}
         {isOpen && (
-          <div className="lg:hidden mt-4 py-4 border-t border-border">
+          <div className="lg:hidden mt-4 py-4 border-t border-border/50">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="block py-2.5 text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className="block py-3 text-muted-foreground hover:text-foreground hover:pl-2 transition-all duration-300 font-semibold text-[15px]"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
