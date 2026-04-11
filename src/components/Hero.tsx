@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const roles = [
@@ -48,7 +49,12 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left animate-fade-in">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex-1 text-center lg:text-left"
+          >
             <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">
               Welcome to my portfolio
             </p>
@@ -97,12 +103,17 @@ const Hero = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Photo */}
-          <div className="flex-shrink-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
+            className="flex-shrink-0"
+          >
             <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/10 relative z-10">
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/10 relative z-10 bg-card">
                 <img
                   src={profilePhoto}
                   alt="Profile photo"
@@ -115,15 +126,25 @@ const Hero = () => {
               <div className="absolute inset-0 -m-4 rounded-full border-2 border-primary/10 animate-[spin_20s_linear_infinite]" />
               <div className="absolute inset-0 -m-8 rounded-full border border-accent/10 animate-[spin_30s_linear_infinite_reverse]" />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <motion.a 
+            href="#about" 
+            className="text-muted-foreground hover:text-primary transition-colors block"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          >
             <ArrowDown size={24} />
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

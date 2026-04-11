@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 export const useScrollReveal = (threshold = 0.15) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,19 +33,16 @@ export const RevealSection = ({
   className?: string;
   delay?: number;
 }) => {
-  const { ref, isVisible } = useScrollReveal();
   return (
-    <div
-      ref={ref}
+    <motion.div
       className={className}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(40px)",
-        transition: `opacity 0.7s ease-out ${delay}s, transform 0.7s ease-out ${delay}s`,
-      }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.7, delay, ease: "easeOut" }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
 
@@ -52,23 +50,28 @@ export const RevealItem = ({
   children,
   index = 0,
   className = "",
+  delayOffset = 0,
 }: {
   children: React.ReactNode;
   index?: number;
   className?: string;
+  delayOffset?: number;
 }) => {
-  const { ref, isVisible } = useScrollReveal(0.1);
   return (
-    <div
-      ref={ref}
+    <motion.div
       className={className}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0) scale(1)" : "translateY(30px) scale(0.95)",
-        transition: `opacity 0.6s ease-out ${index * 0.12}s, transform 0.6s ease-out ${index * 0.12}s`,
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ 
+        duration: 0.6, 
+        delay: (index * 0.12) + delayOffset, 
+        type: "spring",
+        stiffness: 100,
+        damping: 20
       }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
