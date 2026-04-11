@@ -1,68 +1,52 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Code2 } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-card border-t border-border py-12">
+    <footer className="bg-background border-t border-border/40 py-8 relative overflow-hidden z-10">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold gradient-text mb-4">Django Developer</h3>
-            <p className="text-muted-foreground mb-4 leading-relaxed max-w-md">
-              Passionate Python developer specializing in Django web applications.
-              Building scalable backend solutions with clean, maintainable code.
-            </p>
-            <div className="flex gap-3">
-              {[
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
-              ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
-                  aria-label={link.label}
-                >
-                  <link.icon size={18} />
-                </a>
-              ))}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          
+          {/* Left: Premium Terminal Signature */}
+          <div className="flex flex-col items-center md:items-start">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center border border-border/50 shadow-inner">
+                <Code2 size={16} className="text-primary" />
+              </div>
+              <span className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/60 tracking-tight">
+                Software.Engineer
+              </span>
+            </div>
+            
+            <div className="flex items-center gap-3 text-muted-foreground/80 text-[13px] font-mono mt-1">
+              <p>© {currentYear} All Rights Reserved.</p>
+              <div className="w-1 h-1 rounded-full bg-border/80 hidden sm:block"></div>
+              <div className="flex items-center gap-2 hidden sm:flex">
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
+                <span>Status: <span className="text-emerald-500 font-semibold opacity-90">Available for work</span></span>
+              </div>
             </div>
           </div>
 
-          <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {["About", "Skills", "Projects", "Contact"].map((name) => (
-                <li key={name}>
-                  <a href={`#${name.toLowerCase()}`} className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
-                    {name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Right: Minimal Social Links */}
+          <div className="flex gap-3">
+            {[
+              { icon: Github, href: "#", label: "GitHub" },
+              { icon: Linkedin, href: "#", label: "LinkedIn" },
+              { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="w-10 h-10 rounded-lg bg-secondary/30 border border-border/40 flex items-center justify-center text-muted-foreground hover:bg-secondary/80 hover:text-primary hover:border-border/80 transition-all duration-300 shadow-sm"
+                aria-label={link.label}
+              >
+                <link.icon size={18} />
+              </a>
+            ))}
           </div>
-
-          <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">Technologies</h4>
-            <ul className="space-y-2 text-muted-foreground text-sm">
-              {["Python & Django", "REST APIs", "PostgreSQL", "Docker", "Git & GitHub"].map((t) => (
-                <li key={t}>{t}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-border pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-              © {currentYear} Django Developer Portfolio. All rights reserved.
-            </p>
-            <div className="flex items-center text-muted-foreground text-sm">
-              Made with <Heart size={14} className="mx-1.5 text-destructive animate-pulse" /> using React & Tailwind CSS
-            </div>
-          </div>
+          
         </div>
       </div>
     </footer>
