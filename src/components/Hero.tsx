@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Youtube, Download } from "lucide-react";
 import { motion } from "framer-motion";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
@@ -72,23 +72,32 @@ const Hero = () => {
               power amazing user experiences.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start mb-8">
               <a
                 href="#projects"
-                className="bg-primary text-primary-foreground px-8 py-3.5 rounded-xl hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/25 font-medium"
+                className="bg-primary text-primary-foreground px-8 py-3.5 rounded-xl hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/25 font-medium flex items-center justify-center gap-2"
               >
                 View My Work
               </a>
               <a
                 href="#contact"
-                className="border-2 border-primary text-primary px-8 py-3.5 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 font-medium"
+                className="border-2 border-primary text-primary px-8 py-3.5 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-medium flex items-center justify-center gap-2"
               >
                 Get In Touch
+              </a>
+              <a
+                href="/cv.pdf"
+                download="Resume.pdf"
+                className="border-2 border-muted-foreground/20 text-foreground px-8 py-3.5 rounded-xl hover:border-primary hover:text-primary transition-all duration-300 font-medium flex items-center justify-center gap-2"
+              >
+                <Download size={18} />
+                Download CV
               </a>
             </div>
 
             <div className="flex gap-4 justify-center lg:justify-start">
               {[
+                { icon: Youtube, href: "#", label: "YouTube" },
                 { icon: Github, href: "#", label: "GitHub" },
                 { icon: Linkedin, href: "#", label: "LinkedIn" },
                 { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },

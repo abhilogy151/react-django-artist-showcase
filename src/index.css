@@ -166,7 +166,7 @@
   svg.lucide {
     @apply transition-all duration-300 drop-shadow-sm;
   }
-  a:hover svg.lucide, button:hover svg.lucide, .glass-card:hover svg.lucide, .group:hover svg.lucide {
+  a:hover svg.lucide, button:hover svg.lucide, .group:hover svg.lucide {
     @apply scale-110 drop-shadow-[0_4px_8px_rgba(0,0,0,0.15)];
     stroke-width: 2.2px;
   }
