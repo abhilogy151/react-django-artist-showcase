@@ -1,79 +1,140 @@
-import { Calendar, MapPin, Briefcase } from "lucide-react";
+import { Calendar, MapPin, Briefcase, Code, Database, Server, GitCommit } from "lucide-react";
 import { RevealSection, RevealItem } from "@/hooks/useScrollReveal";
 
 const Experience = () => {
   const experiences = [
     {
-      title: "Django Developer",
+      title: "Senior Django Developer",
       company: "Tech Solutions Inc.",
       location: "Remote",
-      period: "2022 - Present",
-      description: "Developed and maintained web applications using Django framework. Built RESTful APIs, implemented authentication systems, and optimized database queries.",
+      period: "2023 - Present",
+      description: "Developing and maintaining enterprise web applications using the Django framework. Architecting RESTful APIs and optimizing high-throughput database queries.",
       achievements: [
-        "Reduced API response time by 40% through query optimization",
-        "Built 5+ scalable web applications serving 10,000+ users",
-        "Implemented comprehensive testing suite with 90% code coverage",
+        "Reduced API response time by 40% through query optimization and Redis caching",
+        "Built 5+ scalable microservices serving 10,000+ active users",
+        "Implemented comprehensive CI/CD testing suite achieving 90% code coverage",
       ],
+      techStack: ["Django", "Python", "PostgreSQL", "Redis", "Docker"],
+      icon: <Server size={18} />
+    },
+    {
+      title: "Backend Developer",
+      company: "Innovate Web",
+      location: "San Francisco, CA",
+      period: "2022 - 2023",
+      description: "Focused on building robust backend features, integrating third-party APIs, and enhancing application security and performance.",
+      achievements: [
+        "Integrated secure payment gateways processing over $100k monthly",
+        "Refactored legacy codebase, improving load times by 25%",
+      ],
+      techStack: ["React", "Python", "Django REST Framework", "AWS"],
+      icon: <Code size={18} />
     },
     {
       title: "Junior Python Developer",
       company: "StartUp Hub",
       location: "New York, NY",
-      period: "2022 - 2022",
-      description: "Started career as a junior developer, focusing on backend development with Python and Django.",
+      period: "2020 - 2022",
+      description: "Started career as a junior developer, focusing on backend development and learning modern software engineering practices.",
       achievements: [
-        "Successfully completed training program in Django development",
-        "Contributed to 3+ client projects",
-        "Learned best practices in code review and version control",
+        "Successfully completed intensive training in Django development",
+        "Contributed to 3+ major client projects from conception to deployment",
+        "Established best practices in code review and team version control",
       ],
+      techStack: ["Python", "JavaScript", "SQL", "Git"],
+      icon: <Briefcase size={18} />
     },
   ];
 
   return (
-    <section id="experience" className="py-24 bg-secondary/30">
-      <div className="container mx-auto px-6">
+    <section id="experience" className="py-24 bg-background relative overflow-hidden">
+
+      {/* Tech-inspired background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10" />
+
+      <div className="container mx-auto px-4 md:px-6">
         <RevealSection className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Experience</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-mono tracking-tight">Experience</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-4" />
+          <p className="text-muted-foreground font-mono text-sm">## Career timeline & history</p>
         </RevealSection>
 
-        <div className="max-w-4xl mx-auto space-y-8">
-          {experiences.map((exp, index) => (
-            <RevealItem key={index} index={index}>
-              <div className="glass-card card-glow rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 group">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                  <div className="flex items-start gap-4 mb-4 md:mb-0">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <Briefcase className="text-primary" size={22} />
+        <div className="max-w-4xl mx-auto relative pl-4 md:pl-0">
+
+          {/* Enhanced Branch Line */}
+          <div className="absolute left-[30px] md:left-[34px] top-8 bottom-0 w-[4px] bg-gradient-to-b from-border/50 to-transparent rounded-full" />
+          <div className="absolute left-[30px] md:left-[34px] top-8 h-[80%] w-[4px] bg-gradient-to-b from-primary via-accent to-transparent rounded-full shadow-[0_0_15px_rgba(var(--primary),0.5)]" />
+
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <RevealItem key={index} index={index} delayOffset={0.1}>
+                <div className="relative pl-12 md:pl-20 group">
+
+                  {/* Git Commit Node */}
+                  <div className="absolute left-[24px] md:left-[28px] top-6 md:top-8 w-4 h-4 rounded-full bg-background border-2 border-primary z-10 
+                                  shadow-[0_0_10px_rgba(var(--primary),0.5)] group-hover:bg-primary transition-colors duration-500" />
+
+                  {/* Experience Card (Sleek IDE style) */}
+                  <div className="bg-card/40 backdrop-blur-md border border-border/50 rounded-xl p-6 md:p-8 
+                                  hover:border-primary/40 hover:bg-card/80 transition-all duration-500 shadow-sm relative overflow-hidden">
+
+                    {/* Subtle top syntax highlight glow */}
+                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-5 gap-4">
+
+                      {/* Title & Company */}
+                      <div className="flex items-start gap-3">
+                        <div className="mt-1 flex items-center justify-center w-10 h-10 rounded-lg bg-secondary/80 border border-border text-foreground">
+                          {exp.icon}
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-foreground tracking-tight">{exp.title}</h3>
+                          <h4 className="text-base text-muted-foreground font-medium mt-1">@ {exp.company}</h4>
+                        </div>
+                      </div>
+
+                      {/* Date & Location Modules */}
+                      <div className="flex flex-row md:flex-col items-center md:items-end text-sm gap-2 mt-2 md:mt-0 flex-wrap">
+                        <div className="flex items-center gap-1.5 bg-secondary/50 border border-border/50 px-3 py-1 rounded-md font-mono text-[13px] text-foreground/80">
+                          <Calendar size={13} className="text-primary/70" />
+                          <span>{exp.period}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 text-muted-foreground">
+                          <MapPin size={13} />
+                          <span className="font-mono text-[13px]">{exp.location}</span>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">{exp.title}</h3>
-                      <h4 className="text-lg text-primary font-semibold">{exp.company}</h4>
+
+                    <div className="bg-secondary/20 border border-border/20 rounded-lg p-4 mb-5">
+                      <p className="text-foreground/80 leading-relaxed text-[15px]">{exp.description}</p>
                     </div>
-                  </div>
-                  <div className="flex flex-col md:items-end text-muted-foreground text-sm gap-1">
-                    <div className="flex items-center gap-1.5 bg-primary/10 px-3 py-1 rounded-full">
-                      <Calendar size={14} />
-                      <span className="font-medium">{exp.period}</span>
+
+                    {/* Achievements */}
+                    <ul className="space-y-2 mb-6 ml-1">
+                      {exp.achievements.map((a, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="text-primary mt-0.5 font-mono text-sm leading-relaxed">{'>'}</div>
+                          <span className="text-muted-foreground/90 text-[14.5px] leading-relaxed">{a}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Tech Stack Tags (Monospace Developer Style) */}
+                    <div className="flex flex-wrap gap-2 pt-5 border-t border-border/40">
+                      {exp.techStack.map((tech) => (
+                        <span key={tech} className="px-2.5 py-1 text-[12px] font-mono rounded bg-secondary/60 text-secondary-foreground border border-border/50">
+                          {tech}
+                        </span>
+                      ))}
                     </div>
-                    <div className="flex items-center gap-1.5 mt-1">
-                      <MapPin size={14} />
-                      <span>{exp.location}</span>
-                    </div>
+
                   </div>
                 </div>
-                <p className="text-muted-foreground mb-4 leading-relaxed">{exp.description}</p>
-                <ul className="space-y-2">
-                  {exp.achievements.map((a, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mt-2 flex-shrink-0" />
-                      <span className="text-muted-foreground">{a}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </RevealItem>
-          ))}
+              </RevealItem>
+            ))}
+          </div>
         </div>
       </div>
     </section>
