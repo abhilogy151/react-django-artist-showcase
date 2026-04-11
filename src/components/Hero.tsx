@@ -26,7 +26,7 @@ const Hero = () => {
             setTimeout(() => setIsDeleting(true), 1500);
           }
         } else {
-          setDisplayText(role.slice(0, displayText.length - 1));
+          setDisplayText(displayText.slice(0, -1));
           if (displayText.length === 0) {
             setIsDeleting(false);
             setCurrentRole((prev) => (prev + 1) % roles.length);
