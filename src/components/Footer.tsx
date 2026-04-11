@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="bg-background border-t border-border/40 py-8 relative overflow-hidden z-10">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          
+
           {/* Left: Premium Terminal Signature */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center border border-border/50 shadow-inner">
                 <Code2 size={16} className="text-primary" />
@@ -19,14 +19,9 @@ const Footer = () => {
               </span>
             </div>
             
-            <div className="flex items-center gap-3 text-muted-foreground/80 text-[13px] font-mono mt-1">
-              <p>© {currentYear} All Rights Reserved.</p>
-              <div className="w-1 h-1 rounded-full bg-border/80 hidden sm:block"></div>
-              <div className="flex items-center gap-2 hidden sm:flex">
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
-                <span>Status: <span className="text-emerald-500 font-semibold opacity-90">Available for work</span></span>
-              </div>
-            </div>
+            <p className="text-muted-foreground text-[15px] font-mono mt-1 opacity-90">
+              © {currentYear} All Rights Reserved.
+            </p>
           </div>
 
           {/* Right: Minimal Social Links */}
@@ -46,7 +41,7 @@ const Footer = () => {
               </a>
             ))}
           </div>
-          
+
         </div>
       </div>
     </footer>
