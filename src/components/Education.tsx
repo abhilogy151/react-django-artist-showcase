@@ -36,10 +36,7 @@ const Education = () => {
         <div className="max-w-6xl mx-auto space-y-6 md:space-y-8">
           {education.map((edu, index) => (
             <RevealItem key={index} index={index}>
-              <div className="bg-card/70 backdrop-blur-xl rounded-2xl p-5 sm:p-6 md:p-8 border border-border/40 transition-colors duration-500 relative overflow-hidden shadow-sm">
-                {/* Static enhanced left-accent border */}
-                <div className="absolute inset-y-0 left-0 w-[4px] bg-gradient-to-b from-primary via-accent to-primary shadow-[2px_0_8px_rgba(var(--primary),0.15)]" />
-
+              <div className="bg-card/70 backdrop-blur-xl rounded-2xl p-5 sm:p-6 md:p-8 border border-border/40 border-l-4 border-l-primary transition-colors duration-500 relative overflow-hidden shadow-sm">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 md:mb-6 relative z-10 gap-3 lg:gap-0">
                   <div className="flex items-start gap-3 md:gap-4 lg:mb-0">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5 lg:mt-0">
