@@ -8,19 +8,10 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
 
-          {/* Left: Premium Terminal Signature */}
+          {/* Left: Copyright */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center border border-border/50 shadow-inner">
-                <Code2 size={16} className="text-primary" />
-              </div>
-              <span className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/60 tracking-tight">
-                Software.Engineer
-              </span>
-            </div>
-            
-            <p className="text-muted-foreground text-[15px] font-mono mt-1 opacity-90">
-              © {currentYear} All Rights Reserved.
+            <p className="text-muted-foreground text-[15px] font-mono opacity-90">
+              © {currentYear} Abhishek.dev. All Rights Reserved.
             </p>
           </div>
 
