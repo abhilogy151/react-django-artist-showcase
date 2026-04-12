@@ -66,7 +66,7 @@ const Skills = () => {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
           {skillCategories.map((category, index) => (
             <RevealItem key={category.title} index={index} className="h-full">
-              <div className="glass-card p-8 rounded-2xl h-full flex flex-col group border border-primary/5 shadow-sm">
+              <div className="bg-card/70 backdrop-blur-xl border border-border/40 p-8 rounded-2xl h-full flex flex-col group shadow-sm">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center flex-shrink-0 shadow-sm border border-transparent bg-background/50 backdrop-blur-sm">
                     <category.icon size={24} className="text-primary" />

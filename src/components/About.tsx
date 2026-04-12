@@ -22,7 +22,7 @@ const About = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
         </RevealSection>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
           <RevealItem index={0} className="h-full">
             <div className="space-y-6 h-full flex flex-col">
               <div className="space-y-6 flex-grow">
@@ -39,7 +39,7 @@ const About = () => {
 
               <div className="grid grid-cols-2 gap-4 pt-6 mt-auto">
                 {highlights.map((h, i) => (
-                  <div key={h.label} className="glass-card p-5 rounded-xl text-center border border-primary/5 shadow-[0_4px_20px_rgb(0_0_0_/_0.02)] relative overflow-hidden">
+                  <div key={h.label} className="bg-card/70 backdrop-blur-xl border border-border/40 p-5 rounded-xl text-center shadow-sm relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-50" />
                     <h.icon className="mx-auto mb-3 text-primary relative z-10" size={26} />
                     <h4 className="font-semibold text-foreground relative z-10">{h.label}</h4>
@@ -51,7 +51,7 @@ const About = () => {
           </RevealItem>
 
           <RevealItem index={1} className="h-full">
-            <div className="glass-card p-8 md:p-10 rounded-2xl h-full flex flex-col justify-center relative overflow-hidden shadow-[0_4px_20px_rgb(0_0_0_/_0.03)] border-primary/5">
+            <div className="bg-card/70 backdrop-blur-xl border border-border/40 p-8 md:p-10 rounded-2xl h-full flex flex-col justify-center relative overflow-hidden shadow-sm">
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
               <h3 className="text-2xl font-bold text-foreground mb-8 relative z-10">What I Do</h3>

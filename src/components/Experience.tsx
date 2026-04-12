@@ -59,7 +59,7 @@ const Experience = () => {
           <p className="text-muted-foreground font-mono text-sm">## Career timeline & history</p>
         </RevealSection>
 
-        <div className="max-w-4xl mx-auto relative pl-4 md:pl-0">
+        <div className="max-w-6xl mx-auto relative pl-4 md:pl-0">
 
           {/* Enhanced Branch Line */}
           <div className="absolute left-[30px] md:left-[34px] top-8 bottom-0 w-[4px] bg-gradient-to-b from-border/50 to-transparent rounded-full" />

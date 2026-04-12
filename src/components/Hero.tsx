@@ -106,7 +106,7 @@ const Hero = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-11 h-11 rounded-xl glass-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
+                  className="w-11 h-11 rounded-xl bg-secondary/30 border border-border/40 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:bg-secondary/80 hover:text-primary transition-all duration-300 shadow-sm"
                 >
                   <social.icon size={20} />
                 </a>

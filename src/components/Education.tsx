@@ -33,10 +33,10 @@ const Education = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
         </RevealSection>
 
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-6xl mx-auto space-y-8">
           {education.map((edu, index) => (
             <RevealItem key={index} index={index}>
-              <div className="glass-card rounded-2xl p-8 border border-white/5 dark:border-white/10 transition-colors duration-500 ease-out relative overflow-hidden hover:bg-card/60">
+              <div className="bg-card/70 backdrop-blur-xl rounded-2xl p-8 border border-border/40 transition-colors duration-500 relative overflow-hidden shadow-sm">
                 {/* Static enhanced left-accent border */}
                 <div className="absolute inset-y-0 left-0 w-[4px] bg-gradient-to-b from-primary via-accent to-primary shadow-[2px_0_8px_rgba(var(--primary),0.15)]" />
 

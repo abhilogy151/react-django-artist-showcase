@@ -31,9 +31,9 @@ const Navigation = () => {
           {/* Final Custom Brand Logo */}
           <a href="#home" className="flex items-center gap-3 group">
             {/* SVG 'A' Icon Mark */}
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center border border-primary/20 shadow-inner group-hover:shadow-[0_0_15px_rgba(var(--primary),0.3)] group-hover:border-primary/40 transition-all duration-500 overflow-hidden relative">
+            <div className="w-[3.2rem] h-[3.2rem] rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center border border-primary/20 shadow-inner group-hover:shadow-[0_0_15px_rgba(var(--primary),0.3)] group-hover:border-primary/40 transition-all duration-500 overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] skew-x-12" />
-              <svg viewBox="0 0 24 24" className="w-[1.1rem] h-[1.1rem] text-primary drop-shadow-md relative z-10" fill="currentColor">
+              <svg viewBox="0 0 24 24" className="w-[1.5rem] h-[1.5rem] text-primary drop-shadow-md relative z-10" fill="currentColor">
                 <path d="M12 2L3 22h4.5l1.5-4h6l1.5 4H21L12 2zm-1.5 11.5L12 7l1.5 6.5h-3z" />
               </svg>
             </div>
@@ -42,7 +42,7 @@ const Navigation = () => {
               <span className="text-[30px] font-black tracking-tight text-foreground transition-colors group-hover:text-primary leading-none mb-1.5 mt-0.5">
                 Abhishek
               </span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground/80 leading-none">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80 leading-none">
                 Software Engineer
               </span>
             </div>

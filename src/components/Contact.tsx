@@ -40,11 +40,11 @@ const Contact = () => {
           </p>
         </RevealSection>
 
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-16 items-center">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-16 items-stretch">
           
           {/* Left Column: Contact Details */}
-          <RevealItem index={0}>
-            <div className="space-y-10 lg:pr-8">
+          <RevealItem index={0} className="h-full">
+            <div className="flex flex-col justify-between h-full space-y-10 lg:pr-8 py-2">
               <div>
                 <h3 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/80 mb-6 tracking-tight flex items-center gap-3">
                   <MessageSquare size={28} className="text-primary" /> Let's Connect
@@ -73,12 +73,12 @@ const Contact = () => {
           </RevealItem>
 
           {/* Right Column: Premium Contact Form */}
-          <RevealItem index={1}>
-            <div className="relative group/form">
+          <RevealItem index={1} className="h-full">
+            <div className="relative group/form h-full">
               {/* Soft, stationary ambient under-glow for premium depth */}
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-[2rem] blur-[20px] opacity-50 group-hover/form:opacity-100 transition-opacity duration-1000 -z-10"></div>
               
-              <div className="bg-card/70 backdrop-blur-2xl rounded-3xl p-8 md:p-10 border border-white/10 dark:border-white/5 shadow-2xl relative overflow-hidden">
+              <div className="bg-card/70 backdrop-blur-2xl rounded-3xl p-8 md:p-10 border border-border/40 shadow-2xl relative overflow-hidden h-full flex flex-col">
                 
                 {/* Crisp top accent border line */}
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
@@ -112,7 +112,7 @@ const Contact = () => {
                     ))}
                   </div>
                   
-                  <div>
+                  <div className="flex-grow flex flex-col mt-4">
                     <label htmlFor="message" className="block text-[13px] font-semibold text-primary/80 mb-2 font-mono tracking-tight">Message</label>
                     <textarea
                       id="message"
@@ -120,13 +120,12 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows={5}
-                      className="w-full px-5 py-4 bg-background/50 border border-border/50 rounded-xl focus:bg-background focus:border-primary/50 focus:ring-4 focus:ring-primary/10 transition-all duration-300 resize-none text-foreground placeholder:text-muted-foreground/60 text-[15px] font-mono shadow-inner outline-none"
+                      className="w-full flex-grow min-h-[140px] px-5 py-4 bg-background/50 border border-border/50 rounded-xl focus:bg-background focus:border-primary/50 focus:ring-4 focus:ring-primary/10 transition-all duration-300 resize-none text-foreground placeholder:text-muted-foreground/60 text-[15px] font-mono shadow-inner outline-none"
                       placeholder="Describe your requirements here..."
                     />
                   </div>
                   
-                  <div className="pt-4">
+                  <div className="pt-6 mt-auto">
                     <button
                       type="submit"
                       className="relative w-full bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] hover:bg-[position:100%_0] text-white font-bold tracking-wide px-6 py-4 rounded-xl shadow-[0_0_20px_rgba(var(--primary),0.25)] hover:shadow-[0_0_40px_rgba(var(--primary),0.6)] border border-white/20 transition-all duration-700 flex items-center justify-center gap-2 overflow-hidden group"
