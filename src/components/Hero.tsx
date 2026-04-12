@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { ArrowDown, Github, Linkedin, Mail, Youtube, Download } from "lucide-react";
+import { ArrowDown, Mail, Download } from "lucide-react";
+import { GithubIcon, LinkedinIcon, YoutubeIcon } from "./SocialIcons";
 import { motion } from "framer-motion";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
@@ -97,9 +98,9 @@ const Hero = () => {
 
             <div className="flex gap-4 justify-center lg:justify-start">
               {[
-                { icon: Youtube, href: "#", label: "YouTube" },
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
+                { icon: YoutubeIcon, href: "#", label: "YouTube" },
+                { icon: GithubIcon, href: "#", label: "GitHub" },
+                { icon: LinkedinIcon, href: "#", label: "LinkedIn" },
                 { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
               ].map((social) => (
                 <a

@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, Code2 } from "lucide-react";
+import { Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon, YoutubeIcon } from "./SocialIcons";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,15 +12,16 @@ const Footer = () => {
           {/* Left: Copyright */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <p className="text-muted-foreground text-[15px] font-mono opacity-90">
-              © {currentYear} Abhishek.dev. All Rights Reserved.
+              © {currentYear} Abhishek Kumar | Software Engineer
             </p>
           </div>
 
           {/* Right: Minimal Social Links */}
           <div className="flex gap-3">
             {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
+              { icon: YoutubeIcon, href: "#", label: "YouTube" },
+              { icon: GithubIcon, href: "#", label: "GitHub" },
+              { icon: LinkedinIcon, href: "#", label: "LinkedIn" },
               { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
             ].map((link) => (
               <a

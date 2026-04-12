@@ -6,35 +6,35 @@
 
 @layer base {
   :root {
-    --background: 220 20% 98%;
-    --foreground: 220 30% 10%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 220 30% 10%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 10%;
-    --primary: 230 85% 58%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 15% 93%;
-    --secondary-foreground: 220 30% 10%;
-    --muted: 220 15% 93%;
-    --muted-foreground: 220 10% 45%;
-    --accent: 260 70% 55%;
-    --accent-foreground: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 235 85% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 280 85% 60%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 230 85% 58%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 235 85% 60%;
     --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 235 85% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 214 32% 91%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 235 85% 60%;
   }
 
   .dark {
@@ -107,10 +107,17 @@
   
   /* UX Cleanup & Glass Card Enhancements */
   .glass-card {
-    @apply bg-card/30 backdrop-blur-2xl border border-border/20 shadow-[0_8px_32px_rgb(0_0_0_/_0.04)] relative overflow-hidden;
+    background-color: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(40px);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
   }
   .dark .glass-card {
-    @apply shadow-[0_8px_32px_rgb(0_0_0_/_0.2)] border-border/30;
+    background-color: hsl(var(--card) / 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-color: hsl(var(--border) / 0.3);
   }
   .glass-card::before {
     content: '';
