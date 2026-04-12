@@ -37,13 +37,13 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 pt-6 mt-auto">
+              <div className="grid grid-cols-2 gap-3 md:gap-4 pt-6 mt-auto">
                 {highlights.map((h, i) => (
-                  <div key={h.label} className="bg-card/70 backdrop-blur-xl border border-border/40 p-5 rounded-xl text-center shadow-sm relative overflow-hidden">
+                  <div key={h.label} className="bg-card/70 backdrop-blur-xl border border-border/40 p-4 md:p-5 rounded-xl text-center shadow-sm relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-50" />
-                    <h.icon className="mx-auto mb-3 text-primary relative z-10" size={26} />
-                    <h4 className="font-semibold text-foreground relative z-10">{h.label}</h4>
-                    <p className="text-primary font-bold text-lg relative z-10">{h.value}</p>
+                    <h.icon className="mx-auto mb-2 md:mb-3 text-primary relative z-10 w-6 h-6 md:w-[26px] md:h-[26px]" />
+                    <h4 className="font-semibold text-foreground relative z-10 text-[14px] md:text-base">{h.label}</h4>
+                    <p className="text-primary font-bold text-base md:text-lg relative z-10">{h.value}</p>
                   </div>
                 ))}
               </div>
@@ -51,17 +51,17 @@ const About = () => {
           </RevealItem>
 
           <RevealItem index={1} className="h-full">
-            <div className="bg-card/70 backdrop-blur-xl border border-border/40 p-8 md:p-10 rounded-2xl h-full flex flex-col justify-center relative overflow-hidden shadow-sm">
+            <div className="bg-card/70 backdrop-blur-xl border border-border/40 p-6 md:p-10 rounded-2xl h-full flex flex-col justify-center relative overflow-hidden shadow-sm">
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
-              <h3 className="text-2xl font-bold text-foreground mb-8 relative z-10">What I Do</h3>
-              <ul className="space-y-4 relative z-10">
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8 relative z-10">What I Do</h3>
+              <ul className="space-y-3 md:space-y-4 relative z-10">
                 {services.map((s, i) => (
-                  <li key={s.text} className="flex items-center gap-5 p-3 -mx-3 rounded-xl cursor-default">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center flex-shrink-0 border border-transparent bg-background/50 backdrop-blur-sm shadow-sm">
-                      <s.icon size={20} className="text-primary" />
+                  <li key={s.text} className="flex items-center gap-3 md:gap-5 p-2 md:p-3 -mx-2 md:-mx-3 rounded-xl cursor-default">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center flex-shrink-0 border border-transparent bg-background/50 backdrop-blur-sm shadow-sm">
+                      <s.icon className="text-primary w-[18px] h-[18px] md:w-5 md:h-5" />
                     </div>
-                    <span className="text-foreground leading-relaxed font-medium">{s.text}</span>
+                    <span className="text-foreground leading-snug md:leading-relaxed font-medium text-[14px] md:text-base">{s.text}</span>
                   </li>
                 ))}
               </ul>

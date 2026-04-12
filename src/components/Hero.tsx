@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const roles = [
-  "Django Developer",
+  "Software Engineer",
   "Python Expert",
-  "Backend Engineer",
-  "API Architect",
-  "Problem Solver",
+  "Django Developer",
+  "AI Engineer",
+  "Data Scientist",
 ];
 
 const Hero = () => {
@@ -47,10 +47,10 @@ const Hero = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -59,15 +59,15 @@ const Hero = () => {
             <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">
               Welcome to my portfolio
             </p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-[32px] sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 md:mb-6 leading-tight">
               Hi, I'm a
               <br />
-              <span className="gradient-text">
+              <span className="gradient-text whitespace-nowrap">
                 {displayText}
                 <span className="animate-typing-cursor text-primary">|</span>
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
+            <p className="text-[15px] md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed mx-auto lg:mx-0">
               Passionate Python developer with 2 years of experience building robust
               web applications with Django. I create scalable backend solutions that
               power amazing user experiences.
@@ -96,7 +96,7 @@ const Hero = () => {
               </a>
             </div>
 
-            <div className="flex gap-4 justify-center lg:justify-start">
+            <div className="flex gap-3 justify-center lg:justify-start">
               {[
                 { icon: YoutubeIcon, href: "#", label: "YouTube" },
                 { icon: GithubIcon, href: "#", label: "GitHub" },
@@ -107,16 +107,16 @@ const Hero = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-11 h-11 rounded-xl bg-secondary/30 border border-border/40 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:bg-secondary/80 hover:text-primary transition-all duration-300 shadow-sm"
+                  className="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-secondary/30 border border-border/40 backdrop-blur-md flex items-center justify-center text-muted-foreground hover:bg-secondary/80 hover:text-primary transition-all duration-300 shadow-sm"
                 >
-                  <social.icon size={20} />
+                  <social.icon className="w-4.5 h-4.5 md:w-5 md:h-5" />
                 </a>
               ))}
             </div>
           </motion.div>
 
           {/* Photo */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
@@ -140,14 +140,14 @@ const Hero = () => {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <motion.a 
-            href="#about" 
+          <motion.a
+            href="#about"
             className="text-muted-foreground hover:text-primary transition-colors block"
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}

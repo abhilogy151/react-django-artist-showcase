@@ -11,7 +11,7 @@ const Footer = () => {
 
           {/* Left: Copyright */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <p className="text-muted-foreground text-[15px] font-mono opacity-90">
+            <p className="text-muted-foreground text-[12px] md:text-[15px] font-mono opacity-90">
               © {currentYear} Abhishek Kumar | Software Engineer
             </p>
           </div>

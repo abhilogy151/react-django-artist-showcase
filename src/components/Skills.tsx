@@ -8,8 +8,8 @@ const Skills = () => {
       icon: Server,
       skills: [
         { name: "Python" },
-        { name: "Django" },
-        { name: "Django REST Framework" },
+        { name: "Django & DRF" },
+        { name: "FastAPI" },
         { name: "API Architecture" },
         { name: "Git & GitHub" },
         { name: "Docker" }
@@ -55,32 +55,32 @@ const Skills = () => {
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <RevealSection className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Skills & Expertise</h2>
+        <RevealSection className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3 md:mb-4">Skills & Expertise</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg pt-4">
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-[15px] md:text-lg pt-2 md:pt-4">
             A comprehensive overview of my technical arsenal and the tools I use to architect robust, scalable digital solutions.
           </p>
         </RevealSection>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 items-stretch">
           {skillCategories.map((category, index) => (
             <RevealItem key={category.title} index={index} className="h-full">
-              <div className="bg-card/70 backdrop-blur-xl border border-border/40 p-8 rounded-2xl h-full flex flex-col group shadow-sm">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center flex-shrink-0 shadow-sm border border-transparent bg-background/50 backdrop-blur-sm">
-                    <category.icon size={24} className="text-primary" />
+              <div className="bg-card/70 backdrop-blur-xl border border-border/40 p-5 md:p-8 rounded-xl md:rounded-2xl h-full flex flex-col group shadow-sm">
+                <div className="flex items-center gap-3 md:gap-4 mb-5 md:mb-6">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center flex-shrink-0 shadow-sm border border-transparent bg-background/50 backdrop-blur-sm">
+                    <category.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground leading-tight">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground leading-tight">
                     {category.title}
                   </h3>
                 </div>
 
-                <div className="flex flex-col gap-4 mt-auto">
+                <div className="flex flex-col gap-3 md:gap-4 mt-auto">
                   {category.skills.map((skill) => (
-                    <div key={skill.name} className="flex items-center gap-3">
-                      <CheckCircle2 size={18} className="text-primary/70 flex-shrink-0" />
-                      <span className="text-muted-foreground font-medium text-sm lg:text-base leading-tight">{skill.name}</span>
+                    <div key={skill.name} className="flex items-center gap-2.5 md:gap-3">
+                      <CheckCircle2 className="w-[15px] h-[15px] md:w-[18px] md:h-[18px] text-primary/70 flex-shrink-0" />
+                      <span className="text-muted-foreground font-medium text-[13.5px] md:text-sm lg:text-base leading-tight">{skill.name}</span>
                     </div>
                   ))}
                 </div>

@@ -32,7 +32,7 @@ const Certifications = () => {
       credentialId: "ABC123XYZ",
       description: "Comprehensive course covering Django fundamentals, database modeling, and web development best practices.",
       skills: ["Django", "Python", "Web Development", "Database Design"],
-      icon: <Database className="text-primary" size={24} />
+      icon: <Database className="w-5 h-5 md:w-6 md:h-6 text-primary" />
     },
     {
       title: "Python for Data Science",
@@ -41,7 +41,7 @@ const Certifications = () => {
       credentialId: "DEF456ABC",
       description: "Advanced Python programming for data analysis and scientific computing.",
       skills: ["Python", "Data Analysis", "NumPy", "Pandas"],
-      icon: <Terminal className="text-primary" size={24} />
+      icon: <Terminal className="w-5 h-5 md:w-6 md:h-6 text-primary" />
     },
     {
       title: "REST API Development with Django",
@@ -50,7 +50,7 @@ const Certifications = () => {
       credentialId: "GHI789DEF",
       description: "Specialized training in building RESTful APIs using Django REST Framework.",
       skills: ["Django REST Framework", "API Development", "Authentication", "Testing"],
-      icon: <Code className="text-primary" size={24} />
+      icon: <Code className="w-5 h-5 md:w-6 md:h-6 text-primary" />
     },
     {
       title: "AWS Certified Developer – Associate",
@@ -59,7 +59,7 @@ const Certifications = () => {
       credentialId: "AWS987XYZ",
       description: "Demonstrated proficiency in developing, deploying, and debugging cloud-based applications using AWS.",
       skills: ["AWS", "Serverless", "Cloud Architecture", "CI/CD"],
-      icon: <Cloud className="text-primary" size={24} />
+      icon: <Cloud className="w-5 h-5 md:w-6 md:h-6 text-primary" />
     },
     {
       title: "Docker Mastery: with Kubernetes",
@@ -68,16 +68,16 @@ const Certifications = () => {
       credentialId: "DKR321ABC",
       description: "Comprehensive guide to building, testing, and deploying containers with Docker & Kubernetes.",
       skills: ["Docker", "Kubernetes", "Containerization", "DevOps"],
-      icon: <Box className="text-primary" size={24} />
+      icon: <Box className="w-5 h-5 md:w-6 md:h-6 text-primary" />
     },
   ];
 
   return (
-    <section id="certifications" className="py-24 bg-secondary/30 relative overflow-hidden">
-      <div className="container mx-auto px-6">
-        <RevealSection className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Certifications</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
+    <section id="certifications" className="py-16 md:py-24 bg-secondary/30 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
+        <RevealSection className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3 md:mb-4">Certifications</h2>
+          <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
         </RevealSection>
 
         <style>{`
@@ -107,41 +107,41 @@ const Certifications = () => {
           {/* Scrolling Track */}
           <div 
             ref={scrollContainerRef} 
-            className="flex overflow-x-auto gap-6 snap-x snap-mandatory scroll-px-4 no-scrollbar pb-10 pt-6 px-4 after:content-[''] after:w-1 after:flex-none"
+            className="flex overflow-x-auto gap-4 md:gap-6 snap-x snap-mandatory scroll-px-4 no-scrollbar pb-8 md:pb-10 pt-4 md:pt-6 px-4 after:content-[''] after:w-1 after:flex-none"
           >
             {certifications.map((cert, index) => (
               <div key={index} className="flex-none w-[calc(100%-8px)] md:w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] snap-start">
                 <RevealItem index={index} className="h-full">
-                  <div className="bg-card/30 backdrop-blur-md rounded-2xl p-6 border border-border/20 dark:border-border/10 group flex flex-col h-full shadow-[0_8px_32px_rgb(0_0_0_/_0.04)] dark:shadow-[0_8px_32px_rgb(0_0_0_/_0.2)]">
+                  <div className="bg-card/30 backdrop-blur-md rounded-2xl p-5 md:p-6 border border-border/20 dark:border-border/10 group flex flex-col h-full shadow-[0_8px_32px_rgb(0_0_0_/_0.04)] dark:shadow-[0_8px_32px_rgb(0_0_0_/_0.2)]">
                     
-                    <div className="flex items-center gap-4 mb-5">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-5">
                       {/* Unique Tech Icon mapping */}
-                      <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center shadow-inner border border-border/50">
+                      <div className="w-9 h-9 md:w-11 md:h-11 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center shadow-inner border border-border/50">
                         {cert.icon}
                       </div>
 
                       {/* Start and End date mapped into precise monospace style */}
-                      <div className="flex items-center text-muted-foreground text-[13px] gap-1.5 bg-secondary/50 border border-border/50 px-3 py-1.5 rounded-md font-mono">
-                        <Calendar size={13} className="text-primary/70" />
+                      <div className="flex items-center text-muted-foreground text-[11px] md:text-[13px] gap-1.5 bg-secondary/50 border border-border/50 px-2.5 py-1 md:px-3 md:py-1.5 rounded-md font-mono">
+                        <Calendar className="w-3 h-3 md:w-[13px] md:h-[13px] text-primary/70" />
                         <span>{cert.period}</span>
                       </div>
                     </div>
 
-                    <h3 className="text-lg font-bold text-foreground mb-1">{cert.title}</h3>
-                    <p className="text-primary font-semibold text-sm mb-3">{cert.issuer}</p>
-                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{cert.description}</p>
-                    <p className="text-xs text-muted-foreground mb-3 font-mono">ID: {cert.credentialId}</p>
+                    <h3 className="text-[16px] md:text-lg font-bold text-foreground mb-1 leading-snug">{cert.title}</h3>
+                    <p className="text-primary font-semibold text-[13px] md:text-sm mb-2 md:mb-3">{cert.issuer}</p>
+                    <p className="text-muted-foreground mb-3 md:mb-4 text-[12.5px] md:text-sm leading-relaxed">{cert.description}</p>
+                    <p className="text-[11px] md:text-xs text-muted-foreground mb-3 md:mb-4 font-mono">ID: {cert.credentialId}</p>
                     
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-1.5 md:gap-2 mb-5 md:mb-6">
                       {cert.skills.map((skill, i) => (
-                        <span key={i} className="px-2.5 py-1 bg-secondary border border-border/50 text-foreground text-xs rounded font-mono cursor-default">{skill}</span>
+                        <span key={i} className="px-2 py-0.5 md:px-2.5 md:py-1 bg-secondary border border-border/50 text-foreground text-[10px] md:text-xs rounded font-mono cursor-default">{skill}</span>
                       ))}
                     </div>
 
-                    <div className="mt-auto pt-5 border-t border-border/40">
-                      <a href="#" className="inline-flex items-center justify-center w-full px-4 py-2.5 bg-secondary/40 hover:bg-primary/10 hover:shadow-[0_4px_15px_rgba(var(--primary),0.15)] border border-border/50 hover:border-primary/40 text-foreground/80 hover:text-primary transition-all duration-300 rounded-lg text-[13px] font-semibold gap-2 group/btn">
+                    <div className="mt-auto pt-4 md:pt-5 border-t border-border/40">
+                      <a href="#" className="inline-flex items-center justify-center w-full px-4 py-2 md:py-2.5 bg-secondary/40 hover:bg-primary/10 hover:shadow-[0_4px_15px_rgba(var(--primary),0.15)] border border-border/50 hover:border-primary/40 text-foreground/80 hover:text-primary transition-all duration-300 rounded-lg text-[12px] md:text-[13px] font-semibold gap-1.5 md:gap-2 group/btn">
                         View Certificate 
-                        <ExternalLink size={14} className="opacity-70 group-hover/btn:opacity-100 transition-opacity duration-300" />
+                        <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover/btn:opacity-100 transition-opacity duration-300" />
                       </a>
                     </div>
                   </div>
